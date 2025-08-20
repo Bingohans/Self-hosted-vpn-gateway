@@ -7,4 +7,4 @@ DNS = 8.8.8.8
 [Peer]
 PublicKey = xxxx
 AllowedIPs = 0.0.0.0/0, ::/0
-Endpoint = 152.53.131.23:51820
+Endpoint = <vps-ip>:51820
