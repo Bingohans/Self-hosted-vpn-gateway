@@ -1,0 +1,16 @@
+[Interface]
+PrivateKey = xxxx
+Address = 10.13.13.1/24
+ListenPort = 51820
+PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -A FORWARD -i %i -o %i -j ACCEPT
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -D FORWARD -i %i -o %i -j ACCEPT
+
+[Peer]
+# Raspberry Pi
+PublicKey = xxxx
+AllowedIPs = 10.13.13.2/32, 0.0.0.0/0
+
+[Peer]
+# Mac
+PublicKey = xxxx
+AllowedIPs = 10.13.13.3/32
