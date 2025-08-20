@@ -1,0 +1,12 @@
+[Interface]
+PrivateKey = xxxx
+Address = 10.13.13.2/24
+ListenPort = 51820
+PostUp = iptables -A FORWARD -i %i -j ACCEPT; iptables -A FORWARD -o %i -j ACCEPT; iptables -t nat >
+PostDown = iptables -D FORWARD -i %i -j ACCEPT; iptables -D FORWARD -o %i -j ACCEPT; iptables -t na>
+
+[Peer]
+PublicKey = xxxx
+Endpoint = 152.53.131.23:51820
+AllowedIPs = 10.13.13.0/24
+PersistentKeepalive = 25
